@@ -1,12 +1,12 @@
 {
-  "name": "google-nodejs",
+  "name": "serverless-imc",
   "version": "0.1.0",
-  "description": "",
+  "description": "Serverless imc calc",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "serverless.com",
+  "author": "Alexandre Silva <contato@silvalexandre.com>",
   "license": "MIT",
   "dependencies": {
     "serverless-google-cloudfunctions": "^1.1.0"
