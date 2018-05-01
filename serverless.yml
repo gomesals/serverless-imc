@@ -1,0 +1,25 @@
+service: gcf-nodejs # NOTE: Don't put the word "google" in here
+
+custom: ${file(./env.js):env}
+
+provider:
+  name: google
+  memorySize: 128
+  runtime: nodejs
+  project: ${self:custom.project}
+  credentials: ./keyfile.json
+
+plugins:
+  - serverless-google-cloudfunctions
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+
+functions:
+  getBMI:
+    handler: getBMI
+    events:
+      - http: path
