@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-exports.http = (request, response) => {
-  response.status(200).send('Hello World!');
-};
+const BMI = require('./bmi')
 
-exports.event = (event, callback) => {
-  callback();
-};
+exports.getBMI = (req, res) => {
+  if (!req.query.weight) return res.status(400).text('Missing parameter')
+  if (!req.query.height) return res.status(400).text('Missing parameter')
+  res.json(BMI.result(req.query.height, req.query.weight))
+}
